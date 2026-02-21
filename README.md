@@ -4,11 +4,15 @@ A simple HTML-based authentication system Proof of Concept (POC) built with plai
 
 # Pages
 
-login.html-> Login page with username, password fields and navigation links 
-register.html-> Registration page with name, email, phone, password fields 
-forgot-password.html-> Forgot password page with email field 
-reset-password.html->  Reset password page with new password fields 
-dashboard.html-> Dashboard page with logout button 
+login.html-> Login page with username, password fields and navigation links.<br>
+
+register.html-> Registration page with name, email, phone, password fields.<br>
+
+forgot-password.html-> Forgot password page with email field.<br>
+
+reset-password.html->  Reset password page with new password fields .<br>
+
+dashboard.html-> Dashboard page with logout button. 
 
 ## Page Redirections
 
@@ -27,4 +31,3 @@ dashboard.html-> Dashboard page with logout button
 
 - HTML5 only 
 
-`
