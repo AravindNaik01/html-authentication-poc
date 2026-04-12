@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-100 font-sans antialiased;
+    background-image: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(99,102,241,0.18), transparent);
+    min-height: 100vh;
+  }
+  ::-webkit-scrollbar {
+    @apply w-1.5;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-900;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary-600 rounded-full;
+  }
+}
+
+@layer components {
+  /* ── Glassmorphism Card ── */
+  .glass-card {
+    @apply rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-2xl;
+  }
+
+  /* ── Form Field ── */
+  .form-field {
+    @apply w-full rounded-xl border border-slate-700 bg-slate-800/60 px-4 py-3
+           text-slate-100 placeholder-slate-500 transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500
+           hover:border-slate-600;
+  }
+
+  /* ── Primary Button ── */
+  .btn-primary {
+    @apply w-full flex items-center justify-center gap-2 rounded-xl
+           bg-gradient-to-r from-primary-600 to-primary-500 px-6 py-3
+           font-semibold text-white transition-all duration-200
+           hover:from-primary-500 hover:to-primary-400 hover:shadow-lg hover:shadow-primary-500/30
+           active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100;
+  }
+
+  /* ── Outline Button ── */
+  .btn-outline {
+    @apply flex items-center justify-center gap-2 rounded-xl border border-slate-700
+           bg-transparent px-4 py-2 text-sm font-medium text-slate-300 transition-all duration-200
+           hover:border-slate-500 hover:text-white hover:bg-slate-800/60 active:scale-[0.98];
+  }
+
+  /* ── Status Badge ── */
+  .badge-active {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-semibold text-emerald-400 ring-1 ring-emerald-500/30;
+  }
+  .badge-pending {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-amber-500/15 px-3 py-1 text-xs font-semibold text-amber-400 ring-1 ring-amber-500/30;
+  }
+  .badge-completed {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-sky-500/15 px-3 py-1 text-xs font-semibold text-sky-400 ring-1 ring-sky-500/30;
+  }
+
+  /* ── Alert ── */
+  .alert-error {
+    @apply flex items-start gap-3 rounded-xl border border-red-500/30 bg-red-500/10 p-4 text-sm text-red-400 animate-fade-in;
+  }
+  .alert-success {
+    @apply flex items-start gap-3 rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4 text-sm text-emerald-400 animate-fade-in;
+  }
+
+  /* ── Stat Card ── */
+  .stat-card {
+    @apply glass-card p-6 flex flex-col gap-3 hover:border-primary-500/30 transition-all duration-300 hover:-translate-y-0.5;
+  }
+
+  /* ── Table Row ── */
+  .table-row-hover {
+    @apply hover:bg-white/5 transition-colors duration-150;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.4s ease-in-out;
+  }
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
